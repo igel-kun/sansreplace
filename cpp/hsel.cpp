@@ -25,7 +25,9 @@ std::unordered_map<uint32_t, uint32_t> hsel_options;
 
 extern "C" void random_hsel(uint32_t n, uint32_t k, uint32_t* result) {
     hsel_options.clear();
-    for (uint32_t i = 0; i != k; ++i) result[i] = i;
+    for (uint32_t i = 0; i != k; ++i) {
+      result[i] = i;
+    }
     for (uint32_t i = 0; i != k; ++i) {
         const uint32_t r = randbelow(n--) + i;
 
